@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
   before_action :authentic_user
 
-  def index; end
+  def index
+    @steps = Step.all
+  end
 end
