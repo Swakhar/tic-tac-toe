@@ -4,12 +4,17 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createConsumer } from "@rails/actioncable"
 import Game from '../components/Game'
 
+const CableApp = {}
+CableApp.cable = createConsumer('ws://localhost:3000/cable')
 
 document.addEventListener('DOMContentLoaded', () => {
+  const node = document.getElementById('steps_data')
+  const steps = JSON.parse(node.getAttribute('data'))
   ReactDOM.render(
-    <Game />,
+    <Game cable={CableApp.cable} steps={steps} />,
     document.body.appendChild(document.createElement('div')),
   )
 })

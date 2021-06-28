@@ -1,3 +1,7 @@
 Tic Tac Toe game
 
 <%= javascript_pack_tag 'tic_tac_toe', data: {steps: @steps} %>
+<%= content_tag :div,
+  id: "steps_data",
+  data: @steps.to_json do %>
+<% end %>
