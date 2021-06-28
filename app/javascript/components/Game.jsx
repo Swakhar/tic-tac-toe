@@ -49,7 +49,7 @@ function Game(props) {
     });
   }
   return (
-    <div id='steps' className="col-xs-12 col-md-4 col-lg-4 col-lg-offset-4">
+    <div id='steps'>
       <StepList steps={ props.steps } />
     </div>
   );
